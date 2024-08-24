@@ -4,7 +4,7 @@ from PIL import Image, ImageChops
 import io
 
 def remove_bg_page():
-    st.title("Remove Background from Image")
+    st.header("Remove Background from Image")
 
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
@@ -31,7 +31,7 @@ def remove_bg_page():
                            mime=f"image/{file_format.lower()}")
 
 def change_bg_color_page():
-    st.title("Change Background Color of Image")
+    st.header("Change Background Color of Image")
 
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
@@ -69,9 +69,9 @@ def change_bg_color_page():
                            mime=f"image/{file_format.lower()}")
 
 # Main app structure
-st.sidebar.title("Navigation")
+st.sidebar.title("App Navigation")
 page = st.sidebar.radio("Go to", ["Remove Background", "Change Background Color"])
-
+st.title("Custom Background")
 if page == "Remove Background":
     remove_bg_page()
 elif page == "Change Background Color":
